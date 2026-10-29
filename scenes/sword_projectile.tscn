@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/sword_projectile.gd" id="1_sword"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sword"]
+radius = 7.0
+
+[node name="EspadaProyectil" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_sword")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sword")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

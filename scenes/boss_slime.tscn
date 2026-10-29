@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_slime"]
+[ext_resource type="Texture2D" path="res://images/ender_dragon_pixel.svg" id="2_texture"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_boss"]
+radius = 62.0
+
+[node name="EnderDragon" type="CharacterBody2D" groups=["Enemies", "boss"]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_slime")
+move_speed = 82.0
+max_health = 36
+contact_damage = 1
+experience_reward = 0
+is_boss = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.0, 1.0)
+texture = ExtResource("2_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_boss")

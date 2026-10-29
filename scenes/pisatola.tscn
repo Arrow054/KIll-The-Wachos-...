@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cp2r00x3lbhen"]
+
+[ext_resource type="Script" uid="uid://b8l7wvin8ym8f" path="res://scripts/pisatola.gd" id="1_anvdg"]
+[ext_resource type="Texture2D" uid="uid://cy3fixhh6kdxm" path="res://images/assets/dungeon_items/wooden-bow.png" id="2_anvdg"]
+
+[node name="pisatola" type="Node2D" unique_id=206706727]
+script = ExtResource("1_anvdg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1369880633]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_anvdg")

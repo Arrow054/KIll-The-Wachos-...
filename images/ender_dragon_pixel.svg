@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- Silueta cenital original: alas angulosas, cuerpo oscuro y ojos verdes. -->
+  <path d="M13 13H10V10H7V7H3V4H1V13H4V16H7V19H10V21H13V24H16V27H19V24H22V21H25V19H28V16H31V7H29V4H25V7H22V10H19V13H16V11H13Z" fill="#17121f"/>
+  <path d="M3 7H6V10H9V13H12V16H9V14H6V12H3Z" fill="#382650"/>
+  <path d="M29 7H26V10H23V13H20V16H23V14H26V12H29Z" fill="#382650"/>
+  <path d="M5 9H7V11H10V13H8V12H5Z" fill="#7650a0"/>
+  <path d="M27 9H25V11H22V13H24V12H27Z" fill="#7650a0"/>
+  <rect x="13" y="8" width="6" height="4" fill="#21192b"/>
+  <rect x="14" y="11" width="4" height="11" fill="#21192b"/>
+  <rect x="13" y="15" width="6" height="3" fill="#382650"/>
+  <rect x="14" y="21" width="4" height="5" fill="#17121f"/>
+  <rect x="12" y="24" width="2" height="4" fill="#17121f"/>
+  <rect x="18" y="24" width="2" height="4" fill="#17121f"/>
+  <rect x="11" y="27" width="3" height="2" fill="#382650"/>
+  <rect x="18" y="27" width="3" height="2" fill="#382650"/>
+  <rect x="14" y="9" width="1" height="1" fill="#94ff55"/>
+  <rect x="17" y="9" width="1" height="1" fill="#94ff55"/>
+  <rect x="14" y="17" width="1" height="1" fill="#8159aa"/>
+  <rect x="17" y="17" width="1" height="1" fill="#8159aa"/>
+</svg>

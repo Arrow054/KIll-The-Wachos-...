@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bxunhyolygeq1"]
+
+[ext_resource type="Script" uid="uid://bt1nv4dx883v6" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://cp2r00x3lbhen" path="res://scenes/pisatola.tscn" id="2_g2els"]
+[ext_resource type="Script" uid="uid://bnieavnp4lemi" path="res://scripts/barra_vida.gd" id="3_dqkch"]
+[ext_resource type="PackedScene" uid="uid://ryorqh4tt5bk" path="res://scenes/vida.tscn" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://dajfx3cbwdanr" path="res://images/assets/adventurer/adventurer-idle-00.png" id="4_idle"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(24, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 600.0
+
+[sub_resource type="Gradient" id="Gradient_dqkch"]
+offsets = PackedFloat32Array(0, 0.298701, 0.396104, 0.688312, 0.779221, 0.915584)
+colors = PackedColorArray(1, 1, 1, 1, 0.490566, 0.490566, 0.490566, 1, 0.424528, 0.424528, 0.424528, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qlg0r"]
+gradient = SubResource("Gradient_dqkch")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2061187277 groups=["player"]]
+script = ExtResource("1_3vyb7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2107732617]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.191319, 0.994608, 0, 1)
+
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1631781917]
+scale = Vector2(3, 3)
+texture = ExtResource("4_idle")
+region_enabled = true
+region_rect = Rect2(12, 4, 26, 33)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1973925381]
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Arma" type="Node2D" parent="." unique_id=613487676]
+
+[node name="pisatola" parent="Arma" unique_id=250072173 instance=ExtResource("2_g2els")]
+position = Vector2(20, 0)
+
+[node name="Zona_Segura" type="Area2D" parent="." unique_id=964882374]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zona_Segura" unique_id=1292653013]
+shape = SubResource("CircleShape2D_g2els")
+debug_color = Color(0.347636, 0.594911, 0.495904, 0.42)
+
+[node name="barra_vida" type="CanvasLayer" parent="." unique_id=390471671]
+script = ExtResource("3_dqkch")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="barra_vida" unique_id=770688237]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -290.0
+offset_top = 18.0
+offset_right = -18.0
+offset_bottom = 58.0
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="barra_vida/HBoxContainer" unique_id=1910646819]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+
+[node name="AnimatedSprite2D-1" parent="barra_vida/HBoxContainer/TextureRect" unique_id=1361725953 instance=ExtResource("3_qhqgy")]
+unique_name_in_owner = true
+
+[node name="TextureRect2" type="TextureRect" parent="barra_vida/HBoxContainer" unique_id=523287330]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+
+[node name="AnimatedSprite2D-2" parent="barra_vida/HBoxContainer/TextureRect2" unique_id=82755918 instance=ExtResource("3_qhqgy")]
+unique_name_in_owner = true
+
+[node name="TextureRect3" type="TextureRect" parent="barra_vida/HBoxContainer" unique_id=43931099]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+
+[node name="AnimatedSprite2D-3" parent="barra_vida/HBoxContainer/TextureRect3" unique_id=2131133777 instance=ExtResource("3_qhqgy")]
+unique_name_in_owner = true
+
+[node name="TextureRect4" type="TextureRect" parent="barra_vida/HBoxContainer" unique_id=392166697]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+
+[node name="AnimatedSprite2D-4" parent="barra_vida/HBoxContainer/TextureRect4" unique_id=1659240628 instance=ExtResource("3_qhqgy")]
+unique_name_in_owner = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=97108356]
+color = Color(1, 1, 1, 0.835294)
+texture = SubResource("GradientTexture2D_qlg0r")
+texture_scale = 8.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1595342562]
+color = Color(1, 1, 1, 0.568627)
+texture = SubResource("GradientTexture2D_qlg0r")
+texture_scale = 16.0

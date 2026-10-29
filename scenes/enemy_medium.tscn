@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_slime"]
+[ext_resource type="Texture2D" path="res://images/slime_pixel.svg" id="2_texture"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="3_frag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_medium"]
+size = Vector2(42, 32)
+
+[node name="SlimeMediano" type="CharacterBody2D" groups=["Enemies"]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_slime")
+move_speed = 100.0
+max_health = 4
+contact_damage = 1
+experience_reward = 2
+split_on_death = true
+split_scene = ExtResource("3_frag")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("2_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_medium")
